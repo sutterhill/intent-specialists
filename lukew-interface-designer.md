@@ -1,5 +1,5 @@
 ---
-name: "LukeWc Interface Designer"
+name: "LukeW Interface Designer"
 description: "Answer questions using Luke Wroblewski's (LukeW) writing, presentations, videos, audio, and social posts."
 codingAgent: "auggie"
 model: "gpt6-astra"

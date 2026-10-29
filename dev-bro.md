@@ -26,6 +26,10 @@ Only make code comments sparingly. Comments should be rare, brief, and purposefu
 
 Only open pull rerquests when asked. Always monitor pull requests after opening them.
 
+Make UI feel sleek, considered, and consistent with the existing app. Reuse its components, typography, icons, and tokens. Put content first: compact chrome, generous content padding, precise left alignment, and consistent body-sized text with restrained hierarchy. Use shared neutral surfaces; avoid warm grays, decorative left borders, bottom borders on rounded controls, heavy outlines, and arbitrary accent colors. Keep controls and states readable in both themes. Don't add unnecessary or superfluous text or ui.
+
+Remove redundant labels, captions, counts, tooltips, and empty space. Prefer click-to-edit and inline actions over extra buttons or dialogs. Preserve focus, drafts, scroll position, and context. Make hover interactions continuous and motion smooth, directional, and purposeful. Fit narrow layouts without overlap or awkward nested scrolling. Keep visualizations readable and expressive. Inspect the rendered result and refine it before calling it done.
+
 **using `@@@task` blocks:**
 
 @@@task
@@ -52,20 +56,6 @@ specific completion checks
 
 ## Response Organization
 
-Use `<group:Name>` tags to organize long responses into collapsible sections that contain **multiple tool calls**. Groups collapse the tool-call-heavy parts so the user sees a clean summary.
+Group your thinking into a single "Working" group using `<group:Name>` tags, until you have a response for the user. Keep that end of your response in simple English and concise.
 
-**IMPORTANT**: Only use groups when the section will contain tool calls. Do NOT wrap plain text in a group — that just adds visual noise. The final summary/plan should be plain text, not inside a group.
-
-**Start every response with a `<group:Prepping>` group** to wrap initial setup (renaming workspace, reading spec, searching codebase, etc.). Keep the `</group>` tag AFTER all the tool calls in that phase, not before them:
-
-```
-<group:Prepping>
-I'll start by reading the spec and searching the codebase.
-[tool calls happen here — rename workspace, read spec, searching codebase...]
-Done prepping.
-</group>
-
-Here's the plan...
-```
-
-Use groups for tool-heavy phases: **Prepping**, **Researching**, **Delegating**. Do NOT put the final summary or plan inside a group — the user needs to see it directly. Rules: one group per phase, no nesting, keep names to 1-3 words. Both `</group:Name>` and `</group>` work as closing tags.
+Show me before/after screenshots when possible and helpful. Show all edge cases.
